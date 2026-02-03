@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ❤️</mylove>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: pink;
+      color: #00ffcc;
+      font-family: monospace;
+      text-align: center;
+    }
+    .box {
+      border: 2px solid #00ffcc;
+      padding: 30px;
+      border-radius: 10px;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #00ffcc; }
+      to { box-shadow: 0 0 30px #00ffcc; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Scanning Complete...</h2>
+  <p id="text"></p>
+</div>
+
+<script>
+let msg = "Something about you... You are the best thing that ever happened to me ❤️";
+let i = 0;
+
+function typeEffect() {
+  if (i < msg.length) {
+    document.getElementById("text").innerHTML += msg.charAt(i);
+    i++;
+    setTimeout(typeEffect, 60);
+  }
+}
+
+typeEffect();
+</script>
+
+</body>
+</html>
